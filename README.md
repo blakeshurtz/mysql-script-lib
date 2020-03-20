@@ -3,7 +3,7 @@
 
 ## ETL for Analysis
 <a href='https://github.com/blakeshurtz/mysql-script-lib/blob/master/count-number-of-sales-calls.sql'>
-counter-number-of-sales-calls.sql  
+count-number-of-sales-calls.sql  
 </a> 
 - monthly count of sales calls by job type, salesperson, etc.<br>   
 <a href='https://github.com/blakeshurtz/mysql-script-lib/blob/master/customer-info-and-emails.sql'>
