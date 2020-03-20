@@ -5,7 +5,7 @@
 <a href='https://github.com/blakeshurtz/mysql-script-lib/blob/master/count-number-of-sales-calls.sql'>
 counter-number-of-sales-calls.sql  
 </a> 
-- monthly count of sales calls by job type, salesperson, etc.   
+- monthly count of sales calls by job type, salesperson, etc.\   
 <a href='https://github.com/blakeshurtz/mysql-script-lib/blob/master/count-number-of-sales-calls.sql'>
 customer-info-and-emails.sql 
 </a> 
