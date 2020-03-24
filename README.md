@@ -1,5 +1,5 @@
 # mysql-script-lib
-repo for AWS RDBS management. Include data dictionary, database model, .sql query library and data cleaning scripts.  
+repo for AWS RDBS management. Include data dictionary, how-to documentation, database model, .sql query library and data cleaning scripts.  
 
 ## ETL for Analysis
 <a href='https://github.com/blakeshurtz/rdbs_repo/blob/master/SQL%20Queries/count-number-of-sales-calls.sql'>
