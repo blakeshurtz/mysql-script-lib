@@ -1,0 +1,21 @@
+'this is the final macro to clean the data
+'select cell A1 and run!
+
+
+Sub Macro3()
+
+Dim j As Long
+Dim q As Variant
+
+p = 46887 'number of rows
+
+For j = 1 To p
+    q = ActiveCell.Offset(0, 3).Value
+    ActiveCell.Offset(1, 0).Value = q
+    Selection.EntireRow.Delete
+    ActiveCell.Offset(1, 0).Range("A1").Select
+Next j
+
+End Sub
+
+

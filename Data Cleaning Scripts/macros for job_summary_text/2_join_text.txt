@@ -1,0 +1,62 @@
+'This macro joins the "job instructions" and "work completed" text
+'job instructions will be in column A, work completed in column D
+'Before executing, set p equal to the number of rows
+'Select cell A1
+'Run!
+
+Sub macro_2_join_text()
+
+Dim i As Long
+Dim j As Long
+Dim k As Integer
+
+Dim q As Variant
+Dim w As Variant
+
+k = 1
+p = 32000 'number of rows
+
+For j = 1 To p
+    If ActiveCell.Value = "JobClass:" Then
+        ActiveCell.Offset(0, 0).Range("A1").Value = ""
+        ActiveCell.Offset(0, 1).Range("A1").Value = ""
+        ActiveCell.Offset(1, 0).Select
+    ElseIf ActiveCell.Value = "JobType:" Then
+        ActiveCell.Offset(0, 0).Range("A1").Value = ""
+        ActiveCell.Offset(1, 0).Select
+    ElseIf ActiveCell.Value = "Job Inst:" Then
+        q = ActiveCell.Offset(0, 1)
+            Do While ActiveCell.Offset(1, 0).Value = ""
+            'ActiveCell.Offset(1, 0).Select
+            Selection.EntireRow.Delete
+            q = q & " " & ActiveCell.Offset(0, 1)
+            k = 1 + k
+            Loop
+        'ActiveCell.Offset(-k + 1, 0).Range("A1").Value = q
+        ActiveCell.Offset(-1, 0).Range("A1").Value = q
+        'ActiveCell.Offset(1, 0).Select
+        Selection.EntireRow.Delete
+        k = 1
+        q = ""
+    ElseIf ActiveCell.Value = "Work done:" Then
+        q = ActiveCell.Offset(0, 1)
+            Do While ActiveCell.Offset(1, 0).Value = ""
+            'ActiveCell.Offset(1, 0).Select
+            Selection.EntireRow.Delete
+            q = q & " " & ActiveCell.Offset(0, 1)
+            k = 1 + k
+            Loop
+        'ActiveCell.Offset(-k + 1, 0).Range("A1").Value = q
+        ActiveCell.Offset(-1, 3).Range("A1").Value = q
+        'ActiveCell.Offset(1, 0).Select
+        Selection.EntireRow.Delete
+        k = 1
+        q = ""
+    End If
+Next j
+
+End Sub
+
+
+
+

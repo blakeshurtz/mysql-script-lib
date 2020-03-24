@@ -1,0 +1,78 @@
+'set p as number of rows
+'select cell A1
+'run it!
+
+Sub Macro1()
+Dim i As Long
+Dim j As Long
+
+p = 146190 'number of rows
+
+For j = 1 To p
+    If ActiveCell.Value = "JobNo.:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "JobClass:" Then
+        ActiveCell.Offset(1, 0).Range("A1").Select
+    ElseIf ActiveCell.Value = "JobType:" Then
+        ActiveCell.Offset(1, 0).Range("A1").Select
+    ElseIf ActiveCell.Value = "InvoiceNo:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Payment:" Then
+        Selection.EntireRow.Delete
+        Do While ActiveCell.Value = ""
+            Selection.EntireRow.Delete
+        Loop
+    ElseIf ActiveCell.Value = "Total Job Value (Ticket):" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Agree Visit Value:" Then
+        Selection.EntireRow.Delete
+        Do While ActiveCell.Value = ""
+            Selection.EntireRow.Delete
+        Loop
+    ElseIf ActiveCell.Value = "Srvc Chrgd to Agree:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Srvc Chrgd to Warr:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Agrmnts Sold Value:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Amount Collected:" Then
+        Selection.EntireRow.Delete
+        Do While ActiveCell.Value = ""
+            Selection.EntireRow.Delete
+        Loop
+    ElseIf ActiveCell.Value = "Extra Product Amt.:" Then
+        Selection.EntireRow.Delete
+        Do While ActiveCell.Value = ""
+            Selection.EntireRow.Delete
+        Loop
+    ElseIf ActiveCell.Value = "Hours on Job.:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Billable Hours:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Ran Diagnostic:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Money Task Count:" Then
+        Selection.EntireRow.Delete
+    ElseIf ActiveCell.Value = "Job Inst:" Then
+        ActiveCell.Offset(1, 0).Range("A1").Select
+        Do While ActiveCell.Value = ""
+            ActiveCell.Offset(1, 0).Range("A1").Select
+        Loop
+    ElseIf ActiveCell.Value = "Work done:" Then
+        ActiveCell.Offset(1, 0).Range("A1").Select
+        Do While ActiveCell.Offset(0, 1).Range("A1").Value <> "" And ActiveCell.Offset(0, 0).Range("A1").Value = ""
+            ActiveCell.Offset(1, 0).Range("A1").Select
+        Loop
+    ElseIf ActiveCell.Value = "" Then
+        Do While ActiveCell.Value = ""
+            Selection.EntireRow.Delete
+        Loop
+    ElseIf ActiveCell.Value <> "" Then
+        Selection.EntireRow.Delete
+    End If
+Next j
+End Sub
+
+
+
+
